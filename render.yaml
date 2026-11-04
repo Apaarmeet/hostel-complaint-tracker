@@ -1,0 +1,12 @@
+# Render Blueprint: one free Docker web service running the Java app
+services:
+  - type: web
+    name: hostelcare-apaarmeet
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      # Optional: a PostgreSQL URL (e.g. from Neon). Leave empty to use the built-in H2 demo database.
+      - key: DATABASE_URL
+        sync: false

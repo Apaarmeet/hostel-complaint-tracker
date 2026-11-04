@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom tag library used as  <%@ taglib prefix="hc" uri="/WEB-INF/hostel.tld" %> -->
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_0.xsd"
+        version="3.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>hc</short-name>
+
+    <tag>
+        <description>Coloured pill for a complaint status or priority</description>
+        <name>badge</name>
+        <tag-class>com.hostel.tracker.tags.StatusBadgeTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    </tag>
+
+    <tag>
+        <description>One bar of a horizontal bar chart</description>
+        <name>bar</name>
+        <tag-class>com.hostel.tracker.tags.BarTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute><name>label</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><name>max</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><name>suffix</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><name>color</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    </tag>
+</taglib>
