@@ -9,7 +9,7 @@ RUN mvn -B -q package -DskipTests
 # Pre-compile every JSP: start the app, open each page once, stop it.
 # Tomcat keeps the compiled pages in /src/tomcat/work, which we copy into the final image.
 COPY docker/Warmup.java docker/Warmup.java
-RUN (WARMUP=false TOMCAT_BASEDIR=/src/tomcat PORT=8080 java -jar target/app.war > /tmp/app.log 2>&1 &) \
+RUN (TOMCAT_BASEDIR=/src/tomcat PORT=8080 java -jar target/app.war > /tmp/app.log 2>&1 &) \
  && java docker/Warmup.java http://localhost:8080 || (cat /tmp/app.log; exit 1)
 
 # ---------- run stage: just a JRE + the WAR (embedded Tomcat inside) ----------

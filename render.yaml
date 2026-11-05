@@ -5,7 +5,6 @@ services:
     runtime: docker
     plan: free
     region: singapore
-    healthCheckPath: /health
     envVars:
       # Optional: a PostgreSQL URL (e.g. from Neon). Leave empty to use the built-in H2 demo database.
       - key: DATABASE_URL
